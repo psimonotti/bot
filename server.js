@@ -1,6 +1,6 @@
 var express = require('express'),
     path = require('path'),
-    exphbs  = require('express3-handlebars'),
+    exphbs  = require('express3-handlebars'), //https://www.npmjs.org/package/express3-handlebars
     app = express();
 
 app.use(express.static(path.resolve(__dirname, 'public')));
