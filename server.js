@@ -1,7 +1,9 @@
-var express = require('express'),
-    path = require('path'),
+var http= require('http'),
+    path= require('path'),
+    express = require('express'),
     exphbs  = require('express3-handlebars'), //https://www.npmjs.org/package/express3-handlebars
-    app = express();
+    app = express(),
+    server = http.createServer(app);
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 
@@ -13,8 +15,7 @@ app.get('/', function (req, res) {
     res.render('home');
 });
 
-
-app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-  var addr = app.address();
+server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
+  var addr = server.address();
   console.log("Server listening at", addr.address + ":" + addr.port);
 });
