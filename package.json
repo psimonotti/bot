@@ -1,0 +1,11 @@
+{
+  "name": "bot",
+  "version": "0.0.0",
+  "description": "Guerra fra robot",
+  "main": "server.js",
+  "repository": "",
+  "author": "paolo.simonotti@gmail.com",
+  "dependencies": {
+    "express": "~3.2.4",
+  }
+}
