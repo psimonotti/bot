@@ -1,0 +1,68 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+}
+ 
+textarea { 
+    color: #dedede;
+    background: #1C1C1C;
+	font-family: monospace;
+    font-size: 12px;
+    height: 200px;
+    width: 400px;
+}
+
+button {
+	z-index: -1000;
+}
+
+.pl1 {
+	border: 1px solid green;
+	background: green;
+}
+.pl2 {
+	border: 1px solid blue;
+	background: blue;
+}
+
+.bot {
+	position:absolute;
+	left:0;
+	top: 0;
+	margin: -3px 0px 0px -3px;
+	border-radius: 50%;
+	width: 6px;
+	height: 6px;	
+}
+.shot {
+	position:absolute;
+	left:0;
+	top: 0;
+	margin: -2px 0px 0px -2px;
+	border-radius: 50%;
+	width: 4px;
+	height: 4px;
+	background: none;
+}
+
+.radar {
+	border-radius: 50%;
+	width: 0px;
+	height: 0px;
+	position:absolute;
+	left:0px;
+	top: 0px;
+		background: none;
+}
+
+#battleField {
+	color: #dedede;
+    background: #1C1C1C;
+	font-family: monospace;
+    font-size: 12px;
+    height: 500px;
+    width: 500px;
+	overflow: hidden;
+}

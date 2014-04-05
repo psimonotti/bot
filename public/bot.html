@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<script src="js/jquery-2.1.0.min.js"></script>
+		<script src="js/bot.js"></script>
+		<script src="js/main.js"></script>
+		<link href="css/main.css" rel="stylesheet" type="text/css"></link>
+	</head>
+	<body>
+
+		<div id="battleField" style="width: 500px, height:500px">
+			<div id="bot1_radar" class="radar pl1" ></div>
+			<div id="bot2_radar" class="radar pl2" ></div>
+			<div id="bot1_bot" class="bot pl1" ></div>
+			<div id="bot2_bot" class="bot pl2" ></div>
+			<div id="bot1_shot" class="shot pl1" ></div>
+			<div id="bot2_shot" class="shot pl2" ></div>
+			
+		</div>
+		<div>
+		<textarea id="bot1_code">
+if ($posAge>0 && $lastHealth>$health) {
+	if ($posX==0) {
+		drive(2, 100, 100);
+	} else {
+		drive(2, 0, 0);
+	}		
+}
+if ($radarAge==0) {
+	shot($radarX,$radarY);
+}
+$lastHealth=$health;
+		</textarea>
+		<textarea id="bot2_code">
+if ($driveSpeed==0) {
+	drive(1, rnd(0,100), rnd(0,100));
+}
+shot($radarX,$radarY);
+		</textarea>
+		</div>
+		<div>
+			<button id="btnStart">Start</button>
+			<button id="btnStep">Continue</button>
+		</div>
+
+	</body>
+</html>
