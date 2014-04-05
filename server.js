@@ -1,12 +1,20 @@
-var http = require('http');
-var path = require('path');
+var express = require('express'),
+    path = require('path'),
+    exphbs  = require('express3-handlebars'),
+    app = express();
 
-var router = express();
-var server = http.createServer(router);
+app.use(express.static(path.resolve(__dirname, 'public')));
 
-router.use(express.static(path.resolve(__dirname, 'public')));
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 
-server.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-  var addr = server.address();
+app.set('view engine', 'handlebars');
+
+app.get('/', function (req, res) {
+    res.render('home');
+});
+
+
+app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
+  var addr = app.address();
   console.log("Server listening at", addr.address + ":" + addr.port);
 });
